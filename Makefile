@@ -1,6 +1,6 @@
 ifdef OS
 	PYTHON ?= .venv/Scripts/python.exe
-	TYPE_CHECK_COMMAND ?= echo Pytype package doesn't support Windows OS
+	TYPE_CHECK_COMMAND ?= echo Pytype package does not support Windows OS
 else
 	PYTHON ?= .venv/bin/python
 	TYPE_CHECK_COMMAND ?= ${PYTHON} -m pytype --config=pytype.cfg src

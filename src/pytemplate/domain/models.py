@@ -1,0 +1,19 @@
+from dataclasses import dataclass
+
+
+@dataclass
+class Operands:
+    """
+    A class that holds two operands (first_operand, second_operand) as integers.
+    Raises a TypeError if the provided values are not integers.
+    """
+
+    first_operand: int
+    second_operand: int
+
+    def __post_init__(self):
+        # Ensure that first_operand and second_operand are indeed integers
+        if not isinstance(self.first_operand, int):
+            raise TypeError(f"first_operand must be int, got {type(self.first_operand).__name__}")
+        if not isinstance(self.second_operand, int):
+            raise TypeError(f"second_operand must be int, got {type(self.second_operand).__name__}")
