@@ -52,15 +52,11 @@ def test_subtract(calc, first, second, expected):
 
 @pytest.mark.parametrize(
     "first, second, expected",
-    # [
-    #     (2, 3, 6),  # 2 * 3 = 6
-    #     (0, 5, 0),  # 0 * 5 = 0
-    #     (-2, 4, -8),  # -2 * 4 = -8
-    #     (7, -3, -21),  # 7 * (-3) = -21
-    # ],
     [
-        (2, 3, 5),  # 2 + 3 = 5
-        (0, 5, 5),  # 0 + 5 = 5
+        (2, 3, 6),  # 2 * 3 = 6
+        (0, 5, 0),  # 0 * 5 = 0
+        (-2, 4, -8),  # -2 * 4 = -8
+        (7, -3, -21),  # 7 * (-3) = -21
     ],
 )
 def test_multiply(calc, first, second, expected):

@@ -23,7 +23,7 @@ class Calculator:
         """
         Return the product of first_operand and second_operand.
         """
-        return operands.first_operand + operands.second_operand
+        return operands.first_operand * operands.second_operand
 
     def divide(self, operands: Operands) -> int:
         """
