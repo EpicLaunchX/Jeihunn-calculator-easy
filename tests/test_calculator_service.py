@@ -50,23 +50,27 @@ def test_subtract(calc, first, second, expected):
     assert result == expected
 
 
-# @pytest.mark.parametrize(
-#     "first, second, expected",
-#     [
-#         (2, 3, 6),  # 2 * 3 = 6
-#         (0, 5, 0),  # 0 * 5 = 0
-#         (-2, 4, -8),  # -2 * 4 = -8
-#         (7, -3, -21),  # 7 * (-3) = -21
-#     ],
-# )
-# def test_multiply(calc, first, second, expected):
-#     """
-#     Test that multiply method returns correct product.
-#     """
-#     ops = Operands(first_operand=first, second_operand=second)
-#     result = calc.multiply(ops)
-#     assert isinstance(result, int)
-#     assert result == expected
+@pytest.mark.parametrize(
+    "first, second, expected",
+    # [
+    #     (2, 3, 6),  # 2 * 3 = 6
+    #     (0, 5, 0),  # 0 * 5 = 0
+    #     (-2, 4, -8),  # -2 * 4 = -8
+    #     (7, -3, -21),  # 7 * (-3) = -21
+    # ],
+    [
+        (2, 3, 8),  # 2 ** 3 = 8
+        (0, 5, 0),  # 0 ** 5 = 0
+    ],
+)
+def test_multiply(calc, first, second, expected):
+    """
+    Test that multiply method returns correct product.
+    """
+    ops = Operands(first_operand=first, second_operand=second)
+    result = calc.multiply(ops)
+    assert isinstance(result, int)
+    assert result == expected
 
 
 @pytest.mark.parametrize(
