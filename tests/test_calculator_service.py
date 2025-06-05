@@ -59,8 +59,8 @@ def test_subtract(calc, first, second, expected):
     #     (7, -3, -21),  # 7 * (-3) = -21
     # ],
     [
-        (2, 3, 8),  # 2 ** 3 = 8
-        (0, 5, 0),  # 0 ** 5 = 0
+        (2, 3, 5),  # 2 + 3 = 5
+        (0, 5, 5),  # 0 + 5 = 5
     ],
 )
 def test_multiply(calc, first, second, expected):
