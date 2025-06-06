@@ -1,6 +1,6 @@
 import pytest
 
-from pytemplate.domain.models import Operands
+from pytemplate.domain.models import Operands, operands_factory
 from pytemplate.service.calculator import Calculator
 
 
@@ -15,7 +15,7 @@ from pytemplate.service.calculator import Calculator
 )
 def test_add(first, second, expected):
     calc = Calculator()
-    ops = Operands(first_operand=first, second_operand=second)
+    ops = operands_factory(first, second)
     result = calc.add(ops)
     assert isinstance(result, int)
     assert result == expected
@@ -32,7 +32,7 @@ def test_add(first, second, expected):
 )
 def test_subtract(first, second, expected):
     calc = Calculator()
-    ops = Operands(first_operand=first, second_operand=second)
+    ops = operands_factory(first, second)
     result = calc.subtract(ops)
     assert isinstance(result, int)
     assert result == expected
@@ -49,7 +49,7 @@ def test_subtract(first, second, expected):
 )
 def test_multiply(first, second, expected):
     calc = Calculator()
-    ops = Operands(first_operand=first, second_operand=second)
+    ops = operands_factory(first, second)
     result = calc.multiply(ops)
     assert isinstance(result, int)
     assert result == expected
@@ -66,7 +66,7 @@ def test_multiply(first, second, expected):
 )
 def test_divide(first, second, expected):
     calc = Calculator()
-    ops = Operands(first_operand=first, second_operand=second)
+    ops = operands_factory(first, second)
     result = calc.divide(ops)
     assert isinstance(result, int)
     assert result == expected
@@ -74,6 +74,6 @@ def test_divide(first, second, expected):
 
 def test_divide_by_zero():
     calc = Calculator()
-    ops = Operands(first_operand=5, second_operand=0)
+    ops = operands_factory(5, 0)
     with pytest.raises(ZeroDivisionError):
         calc.divide(ops)
