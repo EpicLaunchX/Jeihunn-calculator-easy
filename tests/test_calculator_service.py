@@ -4,11 +4,6 @@ from pytemplate.domain.models import Operands
 from pytemplate.service.calculator import Calculator
 
 
-@pytest.fixture
-def calc():
-    return Calculator()
-
-
 @pytest.mark.parametrize(
     "first, second, expected",
     [
@@ -18,7 +13,8 @@ def calc():
         (10, -4, 6),  # 10 + (-4) = 6
     ],
 )
-def test_add(calc, first, second, expected):
+def test_add(first, second, expected):
+    calc = Calculator()
     ops = Operands(first_operand=first, second_operand=second)
     result = calc.add(ops)
     assert isinstance(result, int)
@@ -34,7 +30,8 @@ def test_add(calc, first, second, expected):
         (4, 10, -6),  # 4 - 10 = -6
     ],
 )
-def test_subtract(calc, first, second, expected):
+def test_subtract(first, second, expected):
+    calc = Calculator()
     ops = Operands(first_operand=first, second_operand=second)
     result = calc.subtract(ops)
     assert isinstance(result, int)
@@ -50,7 +47,8 @@ def test_subtract(calc, first, second, expected):
         (7, -3, -21),  # 7 * (-3) = -21
     ],
 )
-def test_multiply(calc, first, second, expected):
+def test_multiply(first, second, expected):
+    calc = Calculator()
     ops = Operands(first_operand=first, second_operand=second)
     result = calc.multiply(ops)
     assert isinstance(result, int)
@@ -66,14 +64,16 @@ def test_multiply(calc, first, second, expected):
         (7, -3, -3),  # 7 // (-3) = -3 (floor division)
     ],
 )
-def test_divide(calc, first, second, expected):
+def test_divide(first, second, expected):
+    calc = Calculator()
     ops = Operands(first_operand=first, second_operand=second)
     result = calc.divide(ops)
     assert isinstance(result, int)
     assert result == expected
 
 
-def test_divide_by_zero(calc):
+def test_divide_by_zero():
+    calc = Calculator()
     ops = Operands(first_operand=5, second_operand=0)
     with pytest.raises(ZeroDivisionError):
         calc.divide(ops)
