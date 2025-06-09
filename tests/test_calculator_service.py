@@ -41,10 +41,10 @@ def test_subtract(first, second, expected):
 @pytest.mark.parametrize(
     "first, second, expected",
     [
-        (2, 3, 5),  #  intentionally sum: 2 + 3 = 5
-        (0, 5, 5),  #  intentionally sum: 0 + 5 = 5
-        (-2, 4, 2),  #  intentionally sum: -2 + 4 = 2
-        (7, -3, 4),  #  intentionally sum: 7 + (-3) = 4
+        (2, 3, 6),
+        (0, 5, 0),
+        (-2, 4, -8),
+        (7, -3, -21),
     ],
 )
 def test_multiply(first, second, expected):
