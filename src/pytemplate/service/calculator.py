@@ -9,7 +9,7 @@ class Calculator:
         return operands.first_operand - operands.second_operand
 
     def multiply(self, operands: Operands) -> int:
-        return operands.first_operand + operands.second_operand
+        return operands.first_operand * operands.second_operand
 
     def divide(self, operands: Operands) -> int:
         return operands.first_operand // operands.second_operand
