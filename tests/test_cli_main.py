@@ -2,7 +2,7 @@ import builtins
 
 import pytest
 
-from src.pytemplate.entrypoints.cli.main import main
+from pytemplate.entrypoints.cli.main import main
 
 
 @pytest.mark.parametrize(

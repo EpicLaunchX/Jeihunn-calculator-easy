@@ -1,6 +1,6 @@
 import pytest
 
-from pytemplate.domain.models import Operands, operands_factory
+from pytemplate.domain.models import operands_factory
 from pytemplate.service.calculator import Calculator
 
 
